@@ -1,0 +1,133 @@
+/* Basic styling and typography */
+:root {
+    --primary-color: #aaff00;
+    --background-dark: #ffd9d973;
+    --text-light: #f0f0f0;
+    --ui-font: 'Press Start 2P', monospace;
+    --success-color: #00ff3c;
+    --error-color: #ff0019;
+}
+
+body {
+    font-family: var(--ui-font);
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    
+    /* Animated background properties */
+    background: linear-gradient(135deg, #ff6868, #3b2a2a, #ff6868);
+    background-size: 200% 200%; /* Makes the gradient larger than the viewport */
+    animation: background-animate 15s ease infinite; /* Applies the animation */
+
+}
+
+/* Game container and layout */
+.game-container {
+    background-color: rgba(34, 34, 34, 0.8);
+    padding: 3rem;
+    border-radius: 15px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
+    width: 500px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    font-size: 1rem;
+    margin: 1.5rem 0;
+}
+
+/* Input and button styling */
+.game-area {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 2rem;
+}
+
+#guessInput {
+    padding: 10px;
+    width: 60%;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    font-family: var(--ui-font);
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#guessInput:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+#submitGuess {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+    font-family: var(--ui-font);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+#submitGuess:hover {
+    background-color: #fbfbfb; /* Lighter shade on hover */
+}
+
+#submitGuess:active {
+    transform: scale(0.98);
+}
+
+#submitGuess:disabled {
+    background-color: #89e859b8;
+    cursor: not-allowed;
+}
+
+/* Message styling */
+#message {
+    margin-top: 2rem;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    min-height: 2em; /* Prevents layout shift */
+}
+/* Add this to the top of your existing style.css */
+
+
+/* Define the animation */
+@keyframes background-animate {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
